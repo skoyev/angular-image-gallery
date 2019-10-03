@@ -1,0 +1,16 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{title}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="imageModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="modal-body">
+    <img [src]="imageUrl"/>
+</div>
+
+<div class="modal-footer">
+    <button type="button" *ngIf = "showPreviuos" class="btn btn-outline-dark" (click)="onPreviouos.emit()">Previous</button>
+    <button type="button" class="btn btn-outline-dark" (click)="imageModal.close('Close click')">Close</button>
+    <button type="button" *ngIf = "showNext" class="btn btn-outline-dark" (click)="onNext.emit()">Next</button>
+</div>

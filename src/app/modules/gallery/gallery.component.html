@@ -1,0 +1,14 @@
+<div class="row m-0">
+    <div class="col-12 d-flex flex-wrap pt-3 justify-content-around"
+         infinite-scroll
+         [infiniteScrollDistance]="scrollDistance"
+         [infiniteScrollUpDistance]="scrollUpDistance"
+         [infiniteScrollThrottle]="throttle"
+         (scrolled)="onScrollDown()"
+         (scrolledUp)="onUp()">
+            <image *ngFor="let photo of this.gallery; let photoIndex = index" (click)="onImageClick(photoIndex)" [imageData]="gallery[photoIndex]" class="pb-2"></image>
+    </div>
+
+    <div class="loader" *ngIf="showLoader"><img src="assets/img/loading.gif"/></div>
+
+</div>
